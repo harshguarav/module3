@@ -1,0 +1,33 @@
+(function () {
+    // Array of names
+    var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+    // Loop over the names array
+    for (var i = 0; i < names.length; i++) {
+
+        // Retrieve the current name from the array
+        var name = names[i];
+
+        // Convert the current name to lowercase for comparison
+        var lowerCaseName = name.toLowerCase();
+
+        // Check if the current name starts with 'j'
+        if (lowerCaseName.startsWith('j')) {
+            // If the name starts with 'j', call the byeSpeaker's 'speak' method
+            byeSpeaker.speak(name);
+        } else {
+            // If the name does not start with 'j', call the helloSpeaker's 'speak' method
+            helloSpeaker.speak(name);
+        }
+    }
+
+})();
+var helloSpeaker = {};
+
+(function (helloSpeaker) {
+    var speakWord = "Hello";
+
+    helloSpeaker.speak = function (name) {
+        console.log(speakWord + " " + name);
+    }
+})(helloSpeaker);
